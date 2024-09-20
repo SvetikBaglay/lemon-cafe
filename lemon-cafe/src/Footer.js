@@ -3,7 +3,9 @@ import './App.css';
 
 function Footer() {
   return (
-    <h1>Footer</h1>
+    <footer>
+      <p>&copy; 2024 Little Lemon. All rights reserved.</p>
+    </footer>
   );
 }
 

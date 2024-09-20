@@ -1,9 +1,13 @@
 
 import './App.css';
 
+
+
 function Header() {
   return (
-    <h1>Header</h1>
+    <header>
+      <img src='/images/logo.jpg' alt="Little Lemon Logo" width="147" height="40"/>
+    </header>
   );
 }
 
