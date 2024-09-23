@@ -1,7 +1,51 @@
-/* .flex-container {
-  border: 1px solid blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+.flex-container{
+  align-items: normal;
+}
+
+.hero {
+  height: 406px;
+  background-color: #495E57;
+  color: #ffffff;
+}
+
+.hero h5, p {
+  color: #ffffff;
+  margin: 0;
+}
+
+.hero h1 {
+  color: #F4CE14;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 26px;
+  margin-bottom: 72px;
+}
+
+.hero h5 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 22px;
+  font-family: 'Markazi Text', serif;
+}
+
+.hero-container {
+  /* padding: 23px 290px 23px 290px; */
+  padding-left: 290px;
+  padding-right: 290px;
+}
+
+.hero-description {
+  text-align: start;
+  padding-right: 14rem;
+  padding-top: 47px;
+}
+
+.img-hero {
+  width: 375px;
+  height: 428px;
+}
 
