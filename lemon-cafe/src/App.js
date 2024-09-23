@@ -8,8 +8,10 @@ import Nav from './Nav';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Nav />
+      <div className="flex-container">
+        <Header />
+        <Nav />
+      </div>
       <Main />
       <Footer />
     </div>
