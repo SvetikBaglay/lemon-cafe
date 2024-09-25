@@ -61,7 +61,6 @@ function Highlights() {
         </div>
       </div>
     </div>
-   
   );
 }
 
