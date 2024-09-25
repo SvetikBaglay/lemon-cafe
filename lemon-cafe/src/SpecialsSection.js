@@ -1,9 +1,9 @@
 
 import './App.css';
 
-function Highlights() {
+function SpecialsSection() {
   return (
-    <div className="flex-container">
+    <section className="flex-container">
       <div className='highlights-container'>
         <div className='online-menu'>
           <h2>This weeks specials!</h2>
@@ -60,8 +60,8 @@ function Highlights() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-export default Highlights;
+export default SpecialsSection;

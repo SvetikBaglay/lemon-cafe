@@ -1,7 +1,7 @@
 
 import './App.css';
 
-function Hero() {
+function HeroSection() {
   return (
     <div className="flex-container hero">
       <div className="flex-container hero-container">
@@ -19,4 +19,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default HeroSection;

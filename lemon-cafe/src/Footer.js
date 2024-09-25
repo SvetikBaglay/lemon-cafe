@@ -4,7 +4,7 @@ import './App.css';
 function Footer() {
   return (
     <footer>
-      <p>&copy; 2024 Little Lemon. All rights reserved.</p>
+      <h2>&copy; 2024 Little Lemon. All rights reserved.</h2>
     </footer>
   );
 }

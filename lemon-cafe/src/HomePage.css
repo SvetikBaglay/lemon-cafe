@@ -1,0 +1,14 @@
+.testimonials {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.testimonials h2 {
+  text-align: center;
+}
+
+blockquote {
+  border-left: 2px solid #ccc;
+  padding-left: 20px;
+  margin: 20px 0;
+}

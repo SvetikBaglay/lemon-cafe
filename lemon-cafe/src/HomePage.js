@@ -2,27 +2,24 @@
 
 import './App.css';
 import './Main.css'
+import HeroSection from './HeroSection';
+import SpecialsSection from './SpecialsSection';
+import TestimonialsSection from './TestimonialsSection';
+import AboutSection from './AboutSection';
+import Footer from './Footer';
 
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+      <HeroSection />
+      <SpecialsSection />
+      <TestimonialsSection />
+      <AboutSection />
+      <Footer />
+    </div>
   );
 }
-// import Hero from './Hero';
-// import Highlights from './Highlights';
-// import Testimonials from './Testimonials';
-// import About from './About';
 
-// function Main() {
-//   return (
-//     <div className="App">
-//       <Hero />
-//       <Highlights />
-//       <Testimonials />
-//       <About />
-//     </div>
-//   );
-// }
 
 export default HomePage;

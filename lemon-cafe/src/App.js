@@ -13,7 +13,6 @@ function App() {
         <Nav />
       </div>
       <Main />
-      <Footer />
     </div>
   );
 }
