@@ -1,3 +1,55 @@
-.col-12 {
-  border: 1px solid blue;
+h6 {
+  color: #F4CE14;
+  font-family: 'Markazi Text', serif;
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+label {
+  color: #EE9972;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: 'Karla', serif;
+}
+
+.menu-container {
+  display: flex; 
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+  gap: 30px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.col:first-child {
+  text-align: left;
+}
+
+.col:last-child {
+  text-align: right;
+}
+
+.img-meal {
+  width: 180px;
+  height: 135px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .col {
+    text-align: center ; 
+  }
 }
