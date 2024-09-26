@@ -1,14 +1,14 @@
 
 
-import './App.css';
+import '../App.css'
 import './Main.css'
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
-import AboutPage from "./AboutPage";
-import MenuPage from "./MenuPage";
-import ReservationsPage from "./ReservationsPage";
-import OrderPage from "./OrderPage";
-import LoginPage from "./LoginPage";
+import HomePage from './HomePage';
+import AboutPage from './AboutPage';
+import MenuPage from './MenuPage';
+import ReservationsPage from './ReservationsPage';
+import OrderPage from './OrderPage';
+import LoginPage from './LoginPage';
 
 function Main() {
   return (

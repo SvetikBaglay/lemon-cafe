@@ -1,7 +1,6 @@
 
-
-import './App.css';
 import './Main.css'
+import '../App.css'
 
 
 function LoginPage() {

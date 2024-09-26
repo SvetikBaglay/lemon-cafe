@@ -1,11 +1,11 @@
 
 
-import './App.css';
+import '../App.css';
 import './Main.css'
-import HeroSection from './HeroSection';
-import SpecialsSection from './SpecialsSection';
-import TestimonialsSection from './TestimonialsSection';
-import AboutSection from './AboutSection';
+import HeroSection from '../HeroSection'
+import SpecialsSection from '../SpecialsSection';
+import TestimonialsSection from '../TestimonialsSection';
+import AboutSection from '../AboutSection';
 
 
 

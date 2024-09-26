@@ -1,6 +1,6 @@
 
 
-import './App.css';
+import '../App.css';
 import './Main.css'
 import './ReservationsPage.css'
 
