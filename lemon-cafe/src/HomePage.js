@@ -6,7 +6,7 @@ import HeroSection from './HeroSection';
 import SpecialsSection from './SpecialsSection';
 import TestimonialsSection from './TestimonialsSection';
 import AboutSection from './AboutSection';
-import Footer from './Footer';
+
 
 
 function HomePage() {
@@ -16,7 +16,7 @@ function HomePage() {
       <SpecialsSection />
       <TestimonialsSection />
       <AboutSection />
-      <Footer />
+      
     </div>
   );
 }

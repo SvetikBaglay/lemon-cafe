@@ -1,7 +1,11 @@
+main {
+  background-color: #495E57;
+  width: 100%;
+}
+
 .flex-container{
   align-items: normal;
 }
-
 
 .hero {
   height: 406px;

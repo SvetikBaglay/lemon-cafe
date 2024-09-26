@@ -15,11 +15,11 @@ function ReservationsPage() {
       <div className='info-block'>
         <div>
           <label>Select GUEST*</label>
-          <input for='guest' id='guest' type='text' ></input>
+          <input for='guest' id='guest' type='number' ></input>
         </div>
         <div>
           <label>Select Date*</label>
-          <input for='date' id='date' type='text' ></input>
+          <input for='date' id='date' type='number' ></input>
         </div>
         <div>
           <label>Select HOUR*</label>
