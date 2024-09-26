@@ -1,22 +1,21 @@
 
 
 import '../App.css';
-import './Main.css'
+import './AboutPage.css'
 
 
 function AboutPage() {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12 col-md-6">
-          <h6>ABOUT PAGE!!!
-          <br/>Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.</h6>
-        </div>
-        <div className="col-12 col-md-6">
-          <h6>ABOUT PAGE!!!
-          <br/>Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.</h6>
-        </div>
+    <div className='about-container'>
+      <div className='about-item'>
+        <h1>Little Lemon</h1>
+        <h5>Chicago</h5>
+        <p>
+          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. 
+        </p>
       </div>
+      <div className='about-item'></div>
     </div>
   );
 }

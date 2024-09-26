@@ -8,6 +8,9 @@
   margin-bottom: 3rem;
 }
 
+label {
+  color: #ffffff; 
+}
 .booking-container div {
   text-align: center;
 }

@@ -1,3 +1,14 @@
-.col-12 {
-  border: 1px solid blue;
+.about-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  max-width: 600px;
+  width: 100%;
 }
+
+/* .about-item h1 {
+  color: #F4CE14;
+  font-family: 'Markazi Text', serif;
+  font-size: 3rem;
+  margin-bottom: 0;
+} */
