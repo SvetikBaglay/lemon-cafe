@@ -15,7 +15,7 @@ function OrderPage() {
             </p>
           <div className='order-content'>
             <label>$12.99</label>
-            <button className='button btn-secondary'>Online Menu</button>
+            <button className='button button-secondary'>Online Menu</button>
           </div>  
         </div>
         <div className="col">
@@ -31,7 +31,7 @@ function OrderPage() {
             </p>
             <div className='order-content'>
               <label>$7.99</label>
-              <button className='button btn-secondary'>Online Menu</button>
+              <button className='button button-secondary'>Online Menu</button>
             </div>
           
         </div>
@@ -47,7 +47,7 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$20.00</label>
-            <button className='button btn-secondary'>Online Menu</button>
+            <button className='button button-secondary'>Online Menu</button>
           </div>
         </div>
         <div className="col">
@@ -62,7 +62,7 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$18.99</label>
-            <button className='button btn-secondary'>Online Menu</button>
+            <button className='button button-secondary'>Online Menu</button>
           </div>
         </div>
         <div className="col">
@@ -77,7 +77,7 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$8.99</label>
-            <button className='button btn-secondary'>Online Menu</button>
+            <button className='button button-secondary'>Online Menu</button>
           </div>
         </div>
         <div className="col">

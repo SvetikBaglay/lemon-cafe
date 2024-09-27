@@ -14,24 +14,13 @@ label {
 .booking-container div {
   text-align: center;
 }
-/* 
-.info-block {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-} */
+
 
 .info-block,
 .seat-block {
   display: grid;
   gap: 20px;
 }
-
-/* .info-block div {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  align-items: center;
-} */
 
 .info-block div {
   display: flex;
@@ -69,13 +58,7 @@ label {
   margin-top: 20px;
 }
 
-/* .seat-label {
-  grid-column: 1 / -1;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-align: start;
-} */
+
 
 .seat-label {
   grid-column: 1 / -1;
