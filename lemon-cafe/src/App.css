@@ -1,3 +1,9 @@
+h1 {
+  color: #F4CE14 !important;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -69,11 +75,7 @@
   outline: none;
 }
 
-h1 {
-  color: #F4CE14;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-}
+
 /* h1 h2 h3 h4 h5 p {
   margin: 0;
 } */

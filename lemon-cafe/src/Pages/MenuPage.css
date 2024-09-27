@@ -1,15 +1,17 @@
-h6 {
+/* h1 {
   color: #F4CE14;
-  font-family: 'Markazi Text', serif;
+   font-weight: bold;
+  font-family: 'Karla', serif;
   font-size: 3rem;
   margin-bottom: 0;
-}
+} */
 
 label {
   color: #EE9972;
   font-size: 19px;
-  font-weight: bold;
+   font-weight: bold;
   font-family: 'Karla', serif;
+ 
 }
 
 .menu-container {
