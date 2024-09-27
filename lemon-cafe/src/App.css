@@ -9,12 +9,15 @@ h5 {
   color: #000000 !important;
 }
 
+a {
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* max-width: 1440px; */
   width: 100%;
   margin: auto;
   background-color: #ffffff;
@@ -61,7 +64,7 @@ h5 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .header {
@@ -144,3 +147,54 @@ blockquote {
   /* color: #495E57; */
 }
 
+footer {
+  background-color: red;
+  width: 100%;
+  background-color: #495E57;
+  /* max-width: 900px; */
+}
+
+.footer-logo {
+  width: 120px;
+  height: 200px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 2rem 10px;
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  column-gap: 2rem;
+  overflow: hidden;
+  text-align: start;
+  color: #fff;
+}
+
+.footer-item ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 5px;
+}
+
+.footer-item:nth-of-type(4) ul {
+  flex-direction: row;
+  gap: 20px; 
+}
+
+.social-icon {
+  width: 23px;
+  height: 23px;
+}
+
+.nav-link {
+  color: #fff;  
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #DBA800 !important;  
+  text-decoration: none;
+}
