@@ -64,7 +64,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 
 .header {
@@ -95,13 +94,10 @@ a {
 
 p {
   text-align: start;
-  /* background-color: #D9D9D9; */
   color: #fff;
   font-family: 'Karla', serif;
   font-size: 16px;
   border-radius: 1rem;
-  /* padding: 10px; */
-
 }
 
 .about-container {
@@ -113,6 +109,12 @@ p {
   margin: auto;
   column-gap: 3rem;
   row-gap: 5rem;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .img-avatar {
@@ -140,11 +142,6 @@ blockquote {
 
 .testimonials {
   padding: 20px;
-  /* background-color: #f9f9f9; */
-}
-
-.testimonials p {
-  /* color: #495E57; */
 }
 
 footer {
@@ -197,4 +194,8 @@ footer {
 .nav-link:hover {
   color: #DBA800 !important;  
   text-decoration: none;
+}
+
+.nav-link svg:hover path {
+  color: #DBA800 !important;  
 }
