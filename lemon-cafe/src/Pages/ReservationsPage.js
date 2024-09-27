@@ -10,39 +10,39 @@ function ReservationsPage() {
     <div className="booking-container">
       <div className='description-block'>
         <h3>Book with us!</h3>
-        <p>Please complete the table reservation form.</p>
+        <p>Please complete the table reservation namem.</p>
       </div>
       <div className='info-block'>
         <div>
           <label>Select GUEST*</label>
-          <input for='guest' id='guest' type='number' ></input>
+          <input name='guest' id='guest' type='number' ></input>
         </div>
         <div>
           <label>Select Date*</label>
-          <input for='date' id='date' type='number' ></input>
+          <input name='date' id='date' type='number' ></input>
         </div>
         <div>
           <label>Select HOUR*</label>
-          <input for='hour' id='hour' type='text' ></input>
+          <input name='hour' id='hour' type='text' ></input>
         </div>
       </div>
       <div className='seat-block'>
         <label className='seat-label' >Seating area*</label>
         <div className='seat-item'>
           <label>Hall</label>
-          <input for='hall' id='hall' type="checkbox" />
+          <input name='hall' id='hall' type="checkbox" />
         </div>
         <div className='seat-item'>
           <label>Outside</label>
-          <input for='outside' id='outside' type="checkbox" />
+          <input name='outside' id='outside' type="checkbox" />
         </div>
         <div className='seat-item'>
           <label>Yard</label>
-          <input for='yard' id='yard' type="checkbox" />
+          <input name='yard' id='yard' type="checkbox" />
         </div>
         <div className='seat-item'>
           <label>Terrace</label>
-          <input for='terrace' id='terrace' type="checkbox" />
+          <input name='terrace' id='terrace' type="checkbox" />
         </div>
       </div>
     </div>

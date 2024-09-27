@@ -9,6 +9,8 @@ import MenuPage from './MenuPage';
 import ReservationsPage from './ReservationsPage';
 import OrderPage from './OrderPage';
 import LoginPage from './LoginPage';
+import Delivery from './Delivery';
+import Confirm from './Confirm';
 
 function Main() {
   return (
@@ -20,6 +22,8 @@ function Main() {
         <Route path="/reservations" element={<ReservationsPage />} />
         <Route path="/order" element={<OrderPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/delivery" element={<Delivery />} />
+        <Route path="/confirm" element={<Confirm />} />
       </Routes>
     </main>
   );
