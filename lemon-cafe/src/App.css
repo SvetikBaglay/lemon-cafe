@@ -85,6 +85,55 @@ h1 {
 }
 
 
-/* h1 h2 h3 h4 h5 p {
-  margin: 0;
-} */
+p {
+  text-align: start;
+  /* background-color: #D9D9D9; */
+  color: #fff;
+  font-family: 'Karla', serif;
+  font-size: 16px;
+  border-radius: 1rem;
+  /* padding: 10px; */
+
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  max-width: 850px;
+  width: 100%;
+  margin: auto;
+  column-gap: 3rem;
+}
+
+.img-avatar {
+  width: 107px;
+  height: 124px;
+  border-radius: 37px;
+}
+
+.stars {
+    display: block;
+    margin: 10px 0;
+}
+
+svg {
+  height: 20px;
+  width: 20px;
+  color: #F4CE14;
+}
+
+blockquote {
+  border-left: 2px solid #ccc;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.testimonials {
+  padding: 20px;
+  /* background-color: #f9f9f9; */
+}
+
+.testimonials p {
+  /* color: #495E57; */
+}

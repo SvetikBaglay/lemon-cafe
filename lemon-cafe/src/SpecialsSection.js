@@ -2,7 +2,7 @@ import './App.css'
 
 function SpecialsSection() {
   return (
-    <section className="flex-container">
+    <section className="flex-container highlights">
       <div className='highlights-container'>
         <div className='online-menu'>
           <h2>This weeks specials!</h2>

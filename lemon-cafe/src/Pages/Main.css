@@ -47,6 +47,10 @@ main {
   height: 428px;
 }
 
+.highlights {
+  background-color: #ffffff;
+}
+
 .highlights-container {
   display: flex;
   flex-direction: column;
