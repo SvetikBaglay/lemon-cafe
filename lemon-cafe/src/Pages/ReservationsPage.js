@@ -7,45 +7,34 @@ import './ReservationsPage.css'
 
 function ReservationsPage() {
   return (
-    <div className="booking-container">
-      <div className='description-block'>
-        <h3>Book with us!</h3>
-        <p>Please complete the table reservation namem.</p>
-      </div>
-      <div className='info-block'>
-        <div>
-          <label>Select GUEST*</label>
-          <input name='guest' id='guest' type='number' ></input>
+    <div className='booking-container'>
+      <form className='booking-form'>
+        <div className='info-block'>
+          <label for="res-date">Choose date</label>
+          <input type="date" id="res-date"></input>
+          <label for="res-time">Choose time</label>
+          <select id="res-time ">
+            <option>17:00</option>
+            <option>18:00</option>
+            <option>19:00</option>
+            <option>20:00</option>
+            <option>21:00</option>
+            <option>22:00</option>
+          </select>
+          <label for="guests">Number of guests</label>
+          <input type="number" placeholder="1" min="1" max="10" id="guests"></input>
         </div>
-        <div>
-          <label>Select Date*</label>
-          <input name='date' id='date' type='number' ></input>
+        <label for="occasion">Occasion</label>
+        <div className='seat-block'>
+          <select id="occasion">
+            <option>Birthday</option>
+            <option>Anniversary</option>
+          </select>
+          <input className='button button-secondary' type="submit" value="Make Your reservation"></input>
         </div>
-        <div>
-          <label>Select HOUR*</label>
-          <input name='hour' id='hour' type='text' ></input>
-        </div>
-      </div>
-      <div className='seat-block'>
-        <label className='seat-label' >Seating area*</label>
-        <div className='seat-item'>
-          <label>Hall</label>
-          <input name='hall' id='hall' type="checkbox" />
-        </div>
-        <div className='seat-item'>
-          <label>Outside</label>
-          <input name='outside' id='outside' type="checkbox" />
-        </div>
-        <div className='seat-item'>
-          <label>Yard</label>
-          <input name='yard' id='yard' type="checkbox" />
-        </div>
-        <div className='seat-item'>
-          <label>Terrace</label>
-          <input name='terrace' id='terrace' type="checkbox" />
-        </div>
-      </div>
+      </form>
     </div>
+    
   );
 }
 

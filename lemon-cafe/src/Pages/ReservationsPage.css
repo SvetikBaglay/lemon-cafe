@@ -6,6 +6,7 @@
   gap: 30px;
   margin-top: 3rem;
   margin-bottom: 3rem;
+  align-items: center;
 }
 
 label {
@@ -15,6 +16,11 @@ label {
   text-align: center;
 }
 
+.booking-form {
+  display: grid;
+  max-width: 310px;
+  gap: 20px
+}
 
 .info-block,
 .seat-block {
@@ -40,10 +46,6 @@ label {
   text-align: left;
   padding-right: 10px;
 }
-
-/* .info-block input {
-  width: 50%;
-} */
 
 .info-block input{
   width: 300px;
