@@ -65,14 +65,23 @@ h1 {
 }
 
 
-.btn {
-  padding: 19px 25px;
-  background-color: #F4CE14;
+.button{
+  background-color: #F4CE14 !important;
   color: #000000;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   outline: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.btn-primary {
+  padding: 19px 25px;
+}
+
+.btn-secondary {
+  padding: 7px 17px;
 }
 
 

@@ -1,5 +1,4 @@
-
-import './App.css';
+import './App.css'
 
 function SpecialsSection() {
   return (
@@ -7,7 +6,7 @@ function SpecialsSection() {
       <div className='highlights-container'>
         <div className='online-menu'>
           <h2>This weeks specials!</h2>
-          <button className='btn'>Online Menu</button>
+          <button className='button btn-secondary'>Online Menu</button>
         </div>
         <div className='cards'>
           <div className='card'>
