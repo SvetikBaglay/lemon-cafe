@@ -4,12 +4,17 @@ h1 {
   font-family: 'Roboto', sans-serif;
 }
 
+h5 {
+  font-family: 'Markazi Text', serif;
+  color: #000000 !important;
+}
+
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   width: 100%;
   margin: auto;
   background-color: #ffffff;
@@ -99,11 +104,12 @@ p {
 .about-container {
   display: grid;
   grid-template-columns: auto auto;
-  padding: 10px;
-  max-width: 850px;
+  padding:2rem 10px;
+  max-width: 900px;
   width: 100%;
   margin: auto;
   column-gap: 3rem;
+  row-gap: 5rem;
 }
 
 .img-avatar {
@@ -137,3 +143,4 @@ blockquote {
 .testimonials p {
   /* color: #495E57; */
 }
+

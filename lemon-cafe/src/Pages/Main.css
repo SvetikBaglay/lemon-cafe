@@ -24,12 +24,12 @@ main {
   margin-bottom: 72px;
 }
 
-.hero h5 {
+/* .hero h5 {
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 22px;
   font-family: 'Markazi Text', serif;
-}
+} */
 
 .hero-container {
   padding-left: 290px;
@@ -56,9 +56,10 @@ main {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: start;
-  max-width: 858px;
+  max-width: 900px;
   margin: auto;
   padding-top: 95px;
+  padding-bottom: 3rem;
 }
 
 .highlights-container h2 {
@@ -150,3 +151,11 @@ main {
   height: 11px;
 }
 
+.about-section  {
+  background-color: #ffffff;
+
+}
+
+.about-section p {
+  color: #495E57;
+}
