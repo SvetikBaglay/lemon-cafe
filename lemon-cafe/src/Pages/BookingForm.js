@@ -6,7 +6,7 @@ import './BookingForm.css'
 import React, { useState } from "react";
 
 
-function BookingForm() {
+function BookingForm({ availableTimes }) {
   const [resDate, setResDate] = useState('');
   const [resTime, setResTime] = useState('17:00');
   const [numberGuests, setNumberGuests] = useState(1);
@@ -46,12 +46,9 @@ function BookingForm() {
           
           <label htmlFor="res-time">Choose time</label>
           <select value={resTime} onChange={handleSelect} id="resTime" name="resTime">
-            <option value='17:00'>17:00</option>
-            <option value='18:00'>18:00</option>
-            <option value='19:00'>19:00</option>
-            <option value='20:00'>20:00</option>
-            <option value='21:00'>21:00</option>
-            <option value='22:00'>22:00</option>
+            {availableTimes.map((time) => (
+              <option key={time} value={time}>{time}</option>
+            ))}
           </select>
           
           <label htmlFor="guests">Number of guests</label>
