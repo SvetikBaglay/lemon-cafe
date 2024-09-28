@@ -59,7 +59,7 @@ function BookingForm({ availableTimes, updateTimes }) {
             type='date'  name='date' id='date' />
           <label htmlFor='res-time'>Choose time</label>
           <select value={resTime} onChange={handleSelectTime} id='resTime' name='resTime'>
-            {availableTimes.map((time) => (
+            {(availableTimes || []).map((time) => (
               <option key={time} value={time}>{time}</option>
             ))}
           </select>

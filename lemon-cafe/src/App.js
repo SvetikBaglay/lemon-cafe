@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 import Footer from './Footer';
@@ -7,6 +8,7 @@ import Nav from './Nav';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       <div className="flex-container header">
         <Header />
@@ -15,6 +17,7 @@ function App() {
       <Main />
       <Footer />
     </div>
+    </BrowserRouter>
   );
 }
 

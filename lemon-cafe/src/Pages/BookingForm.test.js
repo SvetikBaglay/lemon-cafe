@@ -3,6 +3,6 @@ import BookingForm from './BookingForm';
 
 test('Renders the BookingForm heading', () => {
     render(<BookingForm />);
-    const headingElement = screen.getByText("Book Now");
+    const headingElement = screen.getByText("Choose date");
     expect(headingElement).toBeInTheDocument();
 })
