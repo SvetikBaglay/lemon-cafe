@@ -38,9 +38,13 @@ function OrderPage() {
           <div className='order-content'>
             <label>$12.99</label>
             <button className='button button-secondary'  
-            onClick={() => handleAddToBasket({ name: 'Greek Salad', price: 12.99 })}
+            
             >
               Add to Basket</button>
+            {/* <button className='button button-secondary'  
+            onClick={() => handleAddToBasket({ name: 'Greek Salad', price: 12.99 })}
+            >
+              Add to Basket</button> */}
           </div>  
         </div>
         <div className="col">
@@ -56,10 +60,14 @@ function OrderPage() {
             </p>
             <div className='order-content'>
               <label>$7.99</label>
-              <button className='button button-secondary'
+              <button className='button button-secondary'  
+            
+            >
+              Add to Basket</button>
+              {/* <button className='button button-secondary'
               onClick={() => handleAddToBasket({ name: 'Bruschetta', price: 7.99 })}
               >
-                Add to Basket</button>
+                Add to Basket</button> */}
             </div>
           
         </div>
@@ -75,10 +83,14 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$20.00</label>
-            <button className='button button-secondary'
-            onClick={() => handleAddToBasket({ name: 'Grilled Fish', price: 20.00 })}
+            <button className='button button-secondary'  
+            
             >
               Add to Basket</button>
+            {/* <button className='button button-secondary'
+            onClick={() => handleAddToBasket({ name: 'Grilled Fish', price: 20.00 })}
+            >
+              Add to Basket</button> */}
           </div>
         </div>
         <div className="col">
@@ -93,10 +105,14 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$18.99</label>
-            <button className='button button-secondary'
-            onClick={() => handleAddToBasket({ name: 'Pasta', price: 18.99 })}
+            <button className='button button-secondary'  
+            
             >
               Add to Basket</button>
+            {/* <button className='button button-secondary'
+            onClick={() => handleAddToBasket({ name: 'Pasta', price: 18.99 })}
+            >
+              Add to Basket</button> */}
           </div>
         </div>
         <div className="col">
@@ -111,10 +127,14 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$8.99</label>
-            <button className='button button-secondary'
-            onClick={() => handleAddToBasket({ name: 'Lemon Dessert', price: 8.99 })}
+            <button className='button button-secondary'  
+            
             >
               Add to Basket</button>
+            {/* <button className='button button-secondary'
+            onClick={() => handleAddToBasket({ name: 'Lemon Dessert', price: 8.99 })}
+            >
+              Add to Basket</button> */}
           </div>
         </div>
         <div className="col">
