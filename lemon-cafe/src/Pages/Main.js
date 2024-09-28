@@ -11,11 +11,51 @@ import OrderPage from './OrderPage';
 import LoginPage from './LoginPage';
 import Delivery from './Delivery';
 import Confirm from './Confirm';
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 
 function Main() {
 
-  const [availableTimes, setAvailableTimes] = useState(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
+   const reducer = (state, action) => {
+    switch (action.type) {
+      case 'UPDATE_TIMES':
+        return action.payload; 
+      default:
+        return state; 
+    }
+  };
+
+  let [availableTimes, dispatch] = useReducer(reducer, initializeTimes() );
+
+  function initializeTimes() {
+    return ['12:00', '13:00', '14:00','15:00', '16:00','17:00', '18:00', '19:00', '20:00', '21:00', '22:00']; 
+  }
+
+  function updateTimes(selectedDate) {
+    console.log('selectedDate', selectedDate )
+    const currentDate = new Date()
+    const selectedDateObj = new Date(selectedDate);
+    const currentHour = currentDate.getHours();
+
+    console.log('selectedDateObj ', selectedDateObj)
+    // console.log('currentHour ', currentHour)
+
+    if(selectedDateObj > currentDate) {
+      console.log('IFFFF', availableTimes)
+       dispatch({ type: 'UPDATE_TIMES', payload: initializeTimes() });
+    //  availableTimes = availableTimes.map(Number).filter(num => num > hour)
+
+    } else {
+      
+      const newTime = availableTimes.filter(time => parseInt(time.split(":")[0], 10) > currentHour);
+      
+      dispatch({ type: 'UPDATE_TIMES', payload: newTime });
+    }
+    // console.log('selectedTime ', ) 
+  }
+  
+
+ 
+
 
   return (
     <main>
@@ -23,7 +63,7 @@ function Main() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/menu" element={<MenuPage />} />
-        <Route path="/reservations" element={<BookingForm availableTimes={availableTimes} />} />
+        <Route path="/reservations" element={<BookingForm availableTimes={availableTimes} updateTimes={updateTimes}/>} />
         <Route path="/order" element={<OrderPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/delivery" element={<Delivery />} />

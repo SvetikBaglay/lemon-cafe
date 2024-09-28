@@ -6,26 +6,30 @@ import './BookingForm.css'
 import React, { useState } from 'react';
 
 
-function BookingForm({ availableTimes }) {
+function BookingForm({ availableTimes, updateTimes }) {
   const [resDate, setResDate] = useState('');
-  const [resTime, setResTime] = useState('17:00');
+  const [resTime, setResTime] = useState('');
   const [numberGuests, setNumberGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
 
 
   function handleChangeResDate(e) {
-    setResDate(e.target.value);
     console.log('selected date:', e.target.value);
+
+    setResDate(e.target.value);
+    updateTimes(e.target.value)
+    
   }
 
   function handleChangeNumberGuests(e) {
     setNumberGuests(e.target.value);
-    console.log('number  guests:', e.target.value);
+    // console.log('number  guests:', e.target.value);
   }
 
-  function handleSelect(e) {
+  function handleSelectTime(e) {
     setResTime(e.target.value);
-    console.log('selected time:', e.target.value);
+    
+    
   }
 
   function handleOccasion(e) {
@@ -50,15 +54,18 @@ function BookingForm({ availableTimes }) {
       <form onSubmit={handleSubmit} className='booking-form'>
         <div className='info-block'>
           <label htmlFor='res-date'>Choose date</label>
-          <input onChange={handleChangeResDate} value={resDate} type='date' name='date' id='date' />
-          
+          <input onChange={handleChangeResDate} value={resDate}
+            min={new Date().toISOString().split("T")[0]}
+            type='date'  name='date' id='date' />
           <label htmlFor='res-time'>Choose time</label>
-          <select value={resTime} onChange={handleSelect} id='resTime' name='resTime'>
+          <select value={resTime} onChange={handleSelectTime} id='resTime' name='resTime'>
             {availableTimes.map((time) => (
               <option key={time} value={time}>{time}</option>
             ))}
           </select>
-          
+          {/* <input value={resTime} onChange={handleSelect} id='resTime' name='resTime'
+            min={new Date().toISOString().split("T")[0]}
+            type='time' /> */}
           <label htmlFor='guests'>Number of guests</label>
           <input onChange={handleChangeNumberGuests} value={numberGuests} type='number' name='numberGuests' id='numberGuests' min='1' max='10' />
         </div>
