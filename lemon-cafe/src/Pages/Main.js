@@ -2,7 +2,7 @@
 
 import '../App.css'
 import './Main.css'
-import { Routes, Route, Router } from "react-router-dom";
+import { Routes, Route  } from "react-router-dom";
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import MenuPage from './MenuPage';
@@ -35,13 +35,9 @@ import React, { useState, useReducer, useEffect } from "react";
 // Run your web app and check that the available times on the booking
 // form change when you select a different date.
 
-export const updateTimes = (state, action) => {
-  return ['12:00', '13:00', '14:00','15:00', '16:00','17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-}
 
-export const initializeTimes = () => {
-  return ['12:00', '13:00', '14:00','15:00', '16:00','17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-  }
+
+
 
 function Main() {
 
@@ -49,6 +45,20 @@ function Main() {
   const hour = todayDate.getHours()
   const min = todayDate.getMinutes()
   const stringTodayTime = ` ${hour}:${min}`
+
+  // useEffect(() => {
+  //   times = fetchAPI(new Date());
+  // }, [fetchAPI]);
+
+  const initializeTimes = () => {
+    const times = window.fetchAPI(new Date());
+    return times;
+  }
+
+  const updateTimes = (state, date) => {
+    const times = window.fetchAPI(new Date(date));
+    return times;
+  }
 
   //   const fetchData = () => {
   //   fetch('https://raw.githubusercontent.com/courseraap/capstone/main/api.js')
@@ -63,37 +73,14 @@ function Main() {
   // }, []);
 
 
-  const fetchAPI = (date) => {  }
+  // const fetchAPI = (date) => {  }
 
-  const submitAPI = (formData) => {}
+  // const submitAPI = (formData) => {}
 
 
   const [availableTimes, dispatchTimeUpdate] = useReducer(updateTimes, initializeTimes() );
 
 
-
-  // function updateTimes(selectedDate) {
-  //   console.log('selectedDate', selectedDate )
-  //   const currentDate = new Date()
-  //   const selectedDateObj = new Date(selectedDate);
-  //   const currentHour = currentDate.getHours();
-
-  //   console.log('selectedDateObj ', selectedDateObj)
-  //   // console.log('currentHour ', currentHour)
-
-  //   if(selectedDateObj > currentDate) {
-  //     console.log('IFFFF', availableTimes)
-  //      dispatch({ type: 'UPDATE_TIMES', payload: initializeTimes() });
-  //   //  availableTimes = availableTimes.map(Number).filter(num => num > hour)
-
-  //   } else {
-
-  //     const newTime = availableTimes.filter(time => parseInt(time.split(":")[0], 10) > currentHour);
-
-  //     dispatch({ type: 'UPDATE_TIMES', payload: newTime });
-  //   }
-  //   // console.log('selectedTime ', )
-  // }
 
   return (
       <main>

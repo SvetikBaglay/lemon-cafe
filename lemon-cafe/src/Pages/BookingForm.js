@@ -22,7 +22,7 @@ function BookingForm({ availableTimes, updateTimes }) {
 
     setResDate(e.target.value);
 
-    // updateTimes(e.target.value)
+    updateTimes(e.target.value)
     // console.log('UpdateTimes:', updateTimes(e.target.value));
 
   }
