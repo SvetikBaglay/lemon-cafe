@@ -11,8 +11,9 @@ function BookingForm({ availableTimes, updateTimes }) {
   const [resTime, setResTime] = useState('');
   const [numberGuests, setNumberGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
+   const [restaurantName, setRestaurantName] = useState();
 
-
+  return <h1>{restaurantName}</h1>;
   function handleChangeResDate(e) {
     console.log('selected date:', e.target.value);
 
