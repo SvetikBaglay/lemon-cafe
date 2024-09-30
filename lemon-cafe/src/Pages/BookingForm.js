@@ -12,8 +12,10 @@ import * as Yup from 'yup';
 function BookingForm({ availableTimes, updateTimes }) {
   const [resDate, setResDate] = useState('');
   const [resTime, setResTime] = useState('');
-  const [numberGuests, setNumberGuests] = useState(1);
+  const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
+
+  const regexNumber = /^[0-9]*$/
 
   function handleChangeResDate(e) {
     // console.log('selected date:', e.target.value);
@@ -25,9 +27,11 @@ function BookingForm({ availableTimes, updateTimes }) {
 
   }
 
-  function handleChangeNumberGuests(e) {
-    setNumberGuests(e.target.value);
-    // console.log('number  guests:', e.target.value);
+  function handleChangeGuests(e) {
+    // setGuests(e.target.value);
+    if (regexNumber.test(e.target.value) || e.target.value === '') {
+      setGuests(e.target.value);
+    }
   }
 
   function handleSelectTime(e) {
@@ -41,38 +45,74 @@ function BookingForm({ availableTimes, updateTimes }) {
     console.groupCollapsed('selected Occasion', e.target.value)
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  // function handleSubmit(e) {
+  //   e.preventDefault();
 
-    const formData = {
-      date: resDate,
-      time: resTime,
-      guests: numberGuests,
-      occasion: occasion,
-    };
-    console.log('formData', formData);
-  }
+  //   const formData = {
+  //     date: resDate,
+  //     time: resTime,
+  //     guests: guests,
+  //     occasion: occasion,
+  //   };
+  //   console.log('formData', formData);
+  // }
+
+  const validationSchema = Yup.object({
+    date: Yup.string()
+          .required('Date is required'),
+    guests: Yup.number()
+            .required('Number of guests is required')
+            .min(1, 'Minimum 1 guest required')
+            .max(10, 'Maximum 10 guests allowed')
+            .typeError('Guests must be a number'),
+  });
 
   const formik = useFormik({
     initialValues: {
       date: '',
-      guests: '',
-      occasion: 'Birthday',
+      guests: 1,
     },
+    validationSchema,
 
-    validationSchema: Yup.object({
-      guests: Yup.string()
-        .required('Required'),
-    }),
+    onSubmit: (values) => {
+      const formData = {
+        date: values.resDate,
+        time: resTime,
+        guests: values.guests,
+        occasion: occasion,
+      };
+      console.log('FormData:', formData);
+    }
   });
+
+  // const formik = useFormik({
+  //   initialValues: {
+  //     date: '',
+  //     guests: '',
+  //     occasion: 'Birthday',
+  //   },
+
+  //   validationSchema: Yup.object({
+  //     guests: Yup.string()
+  //       .required('Required'),
+  //   }),
+  // });
 
   return (
     <div className='booking-container'>
-      <form onSubmit={handleSubmit} className='booking-form'>
+      <form onSubmit={formik.handleSubmit} className='booking-form'>
         <div className='info-block'>
           <label htmlFor='res-date'>Choose date</label>
-          <input onChange={handleChangeResDate} value={resDate}
-            type='date'  name='date' id='date' />
+          <input
+            onChange={handleChangeResDate}
+            value={resDate}
+            type='date'
+            name='date'
+            id='date'
+          />
+          {formik.errors.date && formik.touched.date ? (
+            <div className="error">{formik.errors.date}</div>
+          ) : null}
           <label htmlFor='res-time'>Choose time</label>
           <select value={resTime} onChange={handleSelectTime} id='resTime' name='resTime'>
             {(availableTimes || []).map((time) => (
@@ -80,7 +120,18 @@ function BookingForm({ availableTimes, updateTimes }) {
             ))}
           </select>
           <label htmlFor='guests'>Number of guests</label>
-          <input onChange={handleChangeNumberGuests} value={numberGuests} type='number' name='numberGuests' id='numberGuests' min='1' max='10' />
+          <input
+            onChange={handleChangeGuests}
+            value={guests}
+            type='text'
+            name='guests'
+            id='guests'
+            min='1'
+            max='10'
+          />
+          {formik.errors.guests && formik.touched.guests ? (
+            <div className="error">{formik.errors.guests}</div>
+          ) : null}
         </div>
 
         <label htmlFor='occasion'>Occasion</label>
