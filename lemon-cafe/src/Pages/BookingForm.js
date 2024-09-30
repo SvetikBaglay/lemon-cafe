@@ -4,6 +4,9 @@ import '../App.css';
 import './Main.css'
 import './BookingForm.css'
 import React, { useState } from 'react';
+import { initializeTimes } from './Main';
+import { useFormik, validateYupSchema } from "formik";
+import * as Yup from 'yup';
 
 
 function BookingForm({ availableTimes, updateTimes }) {
@@ -13,9 +16,10 @@ function BookingForm({ availableTimes, updateTimes }) {
   const [occasion, setOccasion] = useState('Birthday');
 
   function handleChangeResDate(e) {
-    console.log('selected date:', e.target.value);
+    // console.log('selected date:', e.target.value);
 
     setResDate(e.target.value);
+
     // updateTimes(e.target.value)
     // console.log('UpdateTimes:', updateTimes(e.target.value));
 
@@ -49,13 +53,25 @@ function BookingForm({ availableTimes, updateTimes }) {
     console.log('formData', formData);
   }
 
+  const formik = useFormik({
+    initialValues: {
+      date: '',
+      guests: '',
+      occasion: 'Birthday',
+    },
+
+    validationSchema: Yup.object({
+      guests: Yup.string()
+        .required('Required'),
+    }),
+  });
+
   return (
     <div className='booking-container'>
       <form onSubmit={handleSubmit} className='booking-form'>
         <div className='info-block'>
           <label htmlFor='res-date'>Choose date</label>
           <input onChange={handleChangeResDate} value={resDate}
-            min={new Date().toISOString().split("T")[0]}
             type='date'  name='date' id='date' />
           <label htmlFor='res-time'>Choose time</label>
           <select value={resTime} onChange={handleSelectTime} id='resTime' name='resTime'>
@@ -63,9 +79,6 @@ function BookingForm({ availableTimes, updateTimes }) {
               <option key={time} value={time}>{time}</option>
             ))}
           </select>
-          {/* <input value={resTime} onChange={handleSelect} id='resTime' name='resTime'
-            min={new Date().toISOString().split("T")[0]}
-            type='time' /> */}
           <label htmlFor='guests'>Number of guests</label>
           <input onChange={handleChangeNumberGuests} value={numberGuests} type='number' name='numberGuests' id='numberGuests' min='1' max='10' />
         </div>
