@@ -17,8 +17,9 @@ function BookingForm({ availableTimes, updateTimes }) {
     console.log('selected date:', e.target.value);
 
     setResDate(e.target.value);
-    updateTimes(e.target.value)
-    
+    // updateTimes(e.target.value)
+    // console.log('UpdateTimes:', updateTimes(e.target.value));
+
   }
 
   function handleChangeNumberGuests(e) {
@@ -28,8 +29,8 @@ function BookingForm({ availableTimes, updateTimes }) {
 
   function handleSelectTime(e) {
     setResTime(e.target.value);
-    
-    
+
+
   }
 
   function handleOccasion(e) {
@@ -69,15 +70,15 @@ function BookingForm({ availableTimes, updateTimes }) {
           <label htmlFor='guests'>Number of guests</label>
           <input onChange={handleChangeNumberGuests} value={numberGuests} type='number' name='numberGuests' id='numberGuests' min='1' max='10' />
         </div>
-        
+
         <label htmlFor='occasion'>Occasion</label>
         <div className='seat-block'>
           <select value={occasion} onChange={handleOccasion} id='occasion' name='occasion'>
             <option value='Birthday'>Birthday</option>
             <option value='Anniversary'>Anniversary</option>
           </select>
-          
-          <input className='button button-secondary' name='reservations' id='reservations' 
+
+          <input className='button button-secondary' name='reservations' id='reservations'
             type='submit' value='Make Your reservation' />
         </div>
       </form>

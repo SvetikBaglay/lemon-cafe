@@ -13,26 +13,29 @@ import Delivery from './Delivery';
 import Confirm from './Confirm';
 import React, { useState, useReducer } from "react";
 
-const updateTimes = (state, action) => {
-  console.log('UPDATE TIMES!!!!!1111: ', state, action);
-  
+export const updateTimes = (state, action) => {
   return ['12:00', '13:00', '14:00','15:00', '16:00','17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
 }
+
+export const initializeTimes = () => {
+    return ['12:00', '13:00', '14:00','15:00', '16:00','17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+  }
+
+
+
 
 function Main() {
 
   //  const reducer = (state, action) => {
   //   switch (action.type) {
   //     case 'UPDATE_TIMES':
-  //       return action.payload; 
+  //       return action.payload;
   //     default:
-  //       return state; 
+  //       return state;
   //   }
   // };
 
-  const initializeTimes = () => {
-    return ['12:00', '13:00', '14:00','15:00', '16:00','17:00', '18:00', '19:00', '20:00', '21:00', '22:00']; 
-  }
+
 
   const [availableTimes, dispatchTimeUpdate] = useReducer(updateTimes, initializeTimes() );
 
@@ -51,12 +54,12 @@ function Main() {
   //   //  availableTimes = availableTimes.map(Number).filter(num => num > hour)
 
   //   } else {
-      
+
   //     const newTime = availableTimes.filter(time => parseInt(time.split(":")[0], 10) > currentHour);
-      
+
   //     dispatch({ type: 'UPDATE_TIMES', payload: newTime });
   //   }
-  //   // console.log('selectedTime ', ) 
+  //   // console.log('selectedTime ', )
   // }
 
   return (
