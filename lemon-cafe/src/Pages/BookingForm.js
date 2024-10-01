@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { initializeTimes } from './Main';
 import { useFormik, validateYupSchema } from "formik";
 import * as Yup from 'yup';
+import { useNavigate } from "react-router-dom";
 
 
 function BookingForm({ availableTimes, updateTimes }) {
@@ -14,17 +15,13 @@ function BookingForm({ availableTimes, updateTimes }) {
   const [resTime, setResTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
+  const navigate = useNavigate();
 
   const regexNumber = /^[0-9]*$/
 
   function handleChangeResDate(e) {
-    // console.log('selected date:', e.target.value);
-
     setResDate(e.target.value);
-
     updateTimes(e.target.value)
-    // console.log('UpdateTimes:', updateTimes(e.target.value));
-
   }
 
   function handleChangeGuests(e) {
@@ -36,8 +33,6 @@ function BookingForm({ availableTimes, updateTimes }) {
 
   function handleSelectTime(e) {
     setResTime(e.target.value);
-
-
   }
 
   function handleOccasion(e) {
@@ -54,6 +49,7 @@ function BookingForm({ availableTimes, updateTimes }) {
       guests: guests,
       occasion: occasion,
     };
+     navigate('/confirmed')
     console.log('formData', formData);
   }
 
