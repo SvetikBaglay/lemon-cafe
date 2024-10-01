@@ -15,12 +15,21 @@ import ConfirmedBooking from './ConfirmedBooking';
 import React, { useState, useReducer, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// export const initializeTimes = () => {
+//     const times = window.fetchAPI(new Date());
+//     // console.log('times ', times)
+//     console.log('times ', window.fetchAPI(new Date()))
+//     return times;
+//   }
+
 
 function Main() {
   const navigate = useNavigate();
 
   const initializeTimes = () => {
     const times = window.fetchAPI(new Date());
+    // console.log('times ', times)
+    console.log('times ', window.fetchAPI(new Date()))
     return times;
   }
 
