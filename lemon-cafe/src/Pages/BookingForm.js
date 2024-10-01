@@ -9,75 +9,53 @@ import * as Yup from 'yup';
 
 
 function BookingForm({ availableTimes, updateTimes, submitForm }) {
-  const [resDate, setResDate] = useState('');
-  const [resTime, setResTime] = useState('');
-  const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState('Birthday');
+  const options = [{id: 1, value: 'Birthday'}, {id: 2, value: 'Anniversary'}]
+  const [form, setForm] = useState({ date: '', time: '', quests: 1, occasion: 1 })
 
   const regexNumber = /^[0-9]*$/
 
-  const isFormValid = resDate && resTime && guests;
+  // const isFormValid = resDate && resTime && guests;
 
   function handleChangeResDate(e) {
-    setResDate(e.target.value);
+    setForm({ ...form, date: e.target.value });
     updateTimes(e.target.value)
   }
 
   function handleChangeGuests(e) {
-    setGuests(e.target.value);
-    // if (regexNumber.test(e.target.value) || e.target.value === '') {
-    //   setGuests(e.target.value);
-    // }
+    setForm({ ...form, guests: e.target.value });
   }
 
   function handleSelectTime(e) {
-    setResTime(e.target.value);
+    setForm({ ...form, time: e.target.value });
   }
 
   function handleOccasion(e) {
-    setOccasion(e.target.value)
-    console.groupCollapsed('selected Occasion', e.target.value)
+    setForm({ ...form, occasion: e.target.value });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    const formData = {
-      date: resDate,
-      time: resTime,
-      guests: guests,
-      occasion: occasion,
-    };
-    submitForm(formData)
-    console.log('formData', formData);
+    submitForm(form)
   }
 
   const formik = useFormik({
-
     initialValues: {
-      date: resDate,
-      time: resTime,
-      guests: guests,
+      date: '', time: '', guests: 1, occasion: 1
     },
 
     onSubmit: (values) => {
-
-       const formData = {
-        date: values.date,
-        // time: resTime,
-        // guests: guests,
-       };
-      console.log('values ', values)
-       console.log('VAlue FormData', formData);
+      submitForm(values);
     },
 
     validationSchema: Yup.object({
-      // date: Yup.string()
-      //   .required('Required'),
-      // time: Yup.string()
-      //   .required('Required'),
-      // guests: Yup.string()
-      //   .required('Guests is required'),
+      date: Yup.string()
+        .required('Required'),
+      time: Yup.string()
+        .required('Required'),
+      guests: Yup.string()
+        .required('Guests is required'),
+      occasion: Yup.string()
+        .required('Occasion is required'),
     }),
   });
 
@@ -86,49 +64,29 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
     <div className='booking-container'>
       <form onSubmit={formik.handleSubmit} className='booking-form'>
         <div className='info-block'>
-          <label htmlFor='res-date'>Choose date</label>
-          <input
-            onChange={handleChangeResDate}
-            value={formik.values.resDate}
-            type='date'
-            name='date'
-            id='date'
-          />
-
+          <label htmlFor='date'>Choose date</label>
+          <input onChange={formik.handleChange} value={formik.values.date}  id='date' name='date' type='date' />
           {formik.errors.date && formik.touched.date ? (
             <div className="error">{formik.errors.date}</div>
           ) : null}
-          <label htmlFor='res-time'>Choose time</label>
-          <select value={resTime} onChange={handleSelectTime} id='resTime' name='resTime'>
+          <label htmlFor='time'>Choose time</label>
+          <select onChange={formik.handleChange} value={formik.values.time}  id='time' name='time' >
             {(availableTimes || []).map((time) => (
               <option key={time} value={time}>{time}</option>
             ))}
           </select>
           <label htmlFor='guests'>Number of guests</label>
-          <input
-            onChange={handleChangeGuests}
-            value={guests}
-            type='text'
-            name='guests'
-            id='guests'
-            min='1'
-            max='10'
-          />
+          <input onChange={formik.handleChange} value={formik.values.guests}  id='guests' name='guests' type='text' min='1' max='10' />
         </div>
-
         <label htmlFor='occasion'>Occasion</label>
         <div className='seat-block'>
-          <select value={occasion} onChange={handleOccasion} id='occasion' name='occasion'>
-            <option value='Birthday'>Birthday</option>
-            <option value='Anniversary'>Anniversary</option>
+          <select onChange={formik.handleChange} value={formik.values.occasion} id='occasion' name='occasion'>
+            {options.map(({id, value}) => (
+              <option id={id} key={id} value={value}>{value}</option>
+            ))}
           </select>
-          <input
-            className='button button-secondary'
-            name='reservations'
-            id='reservations'
-            type='submit'
-            value='Make Your reservation'
-          />
+          <button className='button button-secondary' type='submit'>Make Your reservation</button>
+          {/* <input  name='reservations' id='reservations' type='submit' value='Make Your reservation'/> */}
         </div>
       </form>
     </div>
