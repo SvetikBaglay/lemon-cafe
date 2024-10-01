@@ -12,19 +12,12 @@ import LoginPage from './LoginPage';
 import Delivery from './Delivery';
 import Confirm from './Confirm';
 import ConfirmedBooking from './ConfirmedBooking';
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useReducer  } from "react";
 import { useNavigate } from "react-router-dom";
 
-// export const initializeTimes = () => {
-//     const times = window.fetchAPI(new Date());
-//     // console.log('times ', times)
-//     console.log('times ', window.fetchAPI(new Date()))
-//     return times;
-//   }
+
 export const initializeTimes = () => {
   const times = window.fetchAPI(new Date());
-  // console.log('times ', times)
-  // console.log('times ', window.fetchAPI(new Date()))
   return times;
 }
 

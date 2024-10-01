@@ -4,7 +4,6 @@ import '../App.css';
 import './Main.css'
 import './BookingForm.css'
 import React, { useState } from 'react';
-import { initializeTimes } from './Main';
 import { useFormik, validateYupSchema } from "formik";
 import * as Yup from 'yup';
 
