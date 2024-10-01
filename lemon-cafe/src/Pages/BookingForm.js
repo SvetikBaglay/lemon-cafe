@@ -17,6 +17,8 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
 
   const regexNumber = /^[0-9]*$/
 
+  const isFormValid = resDate && resTime && guests;
+
   function handleChangeResDate(e) {
     setResDate(e.target.value);
     updateTimes(e.target.value)
@@ -126,8 +128,14 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
             <option value='Anniversary'>Anniversary</option>
           </select>
 
-          <input className='button button-secondary' name='reservations' id='reservations'
-            type='submit' value='Make Your reservation' />
+          <input
+            className='button button-secondary'
+            name='reservations'
+            id='reservations'
+            type='submit'
+            value='Make Your reservation'
+            disabled={!isFormValid}
+          />
         </div>
       </form>
     </div>
