@@ -21,22 +21,21 @@ import { useNavigate } from "react-router-dom";
 //     console.log('times ', window.fetchAPI(new Date()))
 //     return times;
 //   }
+export const initializeTimes = () => {
+  const times = window.fetchAPI(new Date());
+  // console.log('times ', times)
+  // console.log('times ', window.fetchAPI(new Date()))
+  return times;
+}
+
+export const updateTimes = (state, date) => {
+  const times = window.fetchAPI(new Date(date));
+  return times;
+}
 
 
 function Main() {
   const navigate = useNavigate();
-
-  const initializeTimes = () => {
-    const times = window.fetchAPI(new Date());
-    // console.log('times ', times)
-    console.log('times ', window.fetchAPI(new Date()))
-    return times;
-  }
-
-  const updateTimes = (state, date) => {
-    const times = window.fetchAPI(new Date(date));
-    return times;
-  }
 
   const submitForm = (formData) => {
     const result = window.submitAPI(formData)
@@ -45,11 +44,7 @@ function Main() {
     }
   }
 
-
-
   const [availableTimes, dispatchTimeUpdate] = useReducer(updateTimes, initializeTimes() );
-
-
 
   return (
       <main>

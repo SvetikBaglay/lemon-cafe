@@ -53,53 +53,52 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
     console.log('formData', formData);
   }
 
+  const formik = useFormik({
 
-  // const formik = useFormik({
+    initialValues: {
+      date: resDate,
+      time: resTime,
+      guests: guests,
+    },
 
-  //   initialValues: {
-  //     date: resDate,
-  //     time: resTime,
-  //     guests: guests,
-  //     occasion: occasion,
-  //   },
+    onSubmit: (values) => {
 
-  //   onSubmit: (values) => {
-  //     const formData = {
-  //       date: values.resDate,
-  //       time: values.resTime,
-  //       guests: values.guests,
-  //       occasion: values.occasion,
-  //     };
-  //     console.log('FormData:', formData);
-  //   },
+       const formData = {
+        date: values.date,
+        // time: resTime,
+        // guests: guests,
+       };
+      console.log('values ', values)
+       console.log('VAlue FormData', formData);
+    },
 
-  //   validationSchema: Yup.object({
-  //   date: Yup.string()
-  //         .required('Date is required'),
-  //   guests: Yup.number()
-  //           .required('Number of guests is required')
-  //           // .min(1, 'Minimum 1 guest required')
-  //           // .max(10, 'Maximum 10 guests allowed')
-  //           // .typeError('Guests must be a number'),
-  //   })
-  // });
+    validationSchema: Yup.object({
+      // date: Yup.string()
+      //   .required('Required'),
+      // time: Yup.string()
+      //   .required('Required'),
+      // guests: Yup.string()
+      //   .required('Guests is required'),
+    }),
+  });
 
 
   return (
     <div className='booking-container'>
-      <form onSubmit={handleSubmit} className='booking-form'>
+      <form onSubmit={formik.handleSubmit} className='booking-form'>
         <div className='info-block'>
           <label htmlFor='res-date'>Choose date</label>
           <input
             onChange={handleChangeResDate}
-            value={resDate}
+            value={formik.values.resDate}
             type='date'
             name='date'
             id='date'
           />
-          {/* {formik.errors.date && formik.touched.date ? (
+
+          {formik.errors.date && formik.touched.date ? (
             <div className="error">{formik.errors.date}</div>
-          ) : null} */}
+          ) : null}
           <label htmlFor='res-time'>Choose time</label>
           <select value={resTime} onChange={handleSelectTime} id='resTime' name='resTime'>
             {(availableTimes || []).map((time) => (
@@ -116,9 +115,6 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
             min='1'
             max='10'
           />
-          {/* {formik.errors.guests && formik.touched.guests ? (
-            <div className="error">{formik.errors.guests}</div>
-          ) : null} */}
         </div>
 
         <label htmlFor='occasion'>Occasion</label>
@@ -127,14 +123,12 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
             <option value='Birthday'>Birthday</option>
             <option value='Anniversary'>Anniversary</option>
           </select>
-
           <input
             className='button button-secondary'
             name='reservations'
             id='reservations'
             type='submit'
             value='Make Your reservation'
-            disabled={!isFormValid}
           />
         </div>
       </form>
