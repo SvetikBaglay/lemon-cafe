@@ -13,19 +13,11 @@ import Delivery from './Delivery';
 import Confirm from './Confirm';
 import ConfirmedBooking from './ConfirmedBooking';
 import React, { useState, useReducer, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 
 function Main() {
-
-  const todayDate = new Date()
-  const hour = todayDate.getHours()
-  const min = todayDate.getMinutes()
-  const stringTodayTime = ` ${hour}:${min}`
-
-  // useEffect(() => {
-  //   times = fetchAPI(new Date());
-  // }, [fetchAPI]);
+  const navigate = useNavigate();
 
   const initializeTimes = () => {
     const times = window.fetchAPI(new Date());
@@ -37,6 +29,12 @@ function Main() {
     return times;
   }
 
+  const submitForm = (formData) => {
+    const result = window.submitAPI(formData)
+    if (result) {
+      navigate('/confirmed')
+    }
+  }
 
 
 
@@ -50,7 +48,9 @@ function Main() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/menu" element={<MenuPage />} />
-          <Route path="/reservations" element={<BookingForm availableTimes={availableTimes} updateTimes={dispatchTimeUpdate}/>} />
+          <Route path="/reservations" element={<BookingForm availableTimes={availableTimes}
+            updateTimes={dispatchTimeUpdate}
+            submitForm={submitForm}/>} />
           <Route path="/confirmed" element={<ConfirmedBooking />} />
           <Route path="/order" element={<OrderPage />} />
           <Route path="/login" element={<LoginPage />} />

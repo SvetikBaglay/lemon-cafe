@@ -7,15 +7,13 @@ import React, { useState } from 'react';
 import { initializeTimes } from './Main';
 import { useFormik, validateYupSchema } from "formik";
 import * as Yup from 'yup';
-import { useNavigate } from "react-router-dom";
 
 
-function BookingForm({ availableTimes, updateTimes }) {
+function BookingForm({ availableTimes, updateTimes, submitForm }) {
   const [resDate, setResDate] = useState('');
   const [resTime, setResTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
-  const navigate = useNavigate();
 
   const regexNumber = /^[0-9]*$/
 
@@ -49,7 +47,7 @@ function BookingForm({ availableTimes, updateTimes }) {
       guests: guests,
       occasion: occasion,
     };
-     navigate('/confirmed')
+    submitForm(formData)
     console.log('formData', formData);
   }
 
