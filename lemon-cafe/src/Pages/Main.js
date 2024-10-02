@@ -33,6 +33,7 @@ function Main() {
   const submitForm = (formData) => {
     const result = window.submitAPI(formData)
     if (result) {
+      console.log('YES valid Forma')
       navigate('/confirmed')
     }
   }
