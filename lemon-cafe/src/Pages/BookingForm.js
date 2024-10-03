@@ -66,19 +66,21 @@ console.log('formik ', formik.values)
     <div className='booking-container'>
       <form onSubmit={formik.handleSubmit} className='booking-form'>
         <div className='info-block'>
-          <label htmlFor='date'>Choose date</label>
-          <input onChange={formik.handleChange} value={formik.values.date} onBlur={formik.handleBlur} id='date' name='date' type='date'  />
+          <label htmlFor='date'>Choose date
+            <input onChange={formik.handleChange} value={formik.values.date} onBlur={formik.handleBlur} id='date' name='date' type='date'  />
           {formik.errors.date && formik.touched.date ? (
             <div className="error">{formik.errors.date}</div>
           ) : null}
+          </label>
+
           <label htmlFor='time'>Choose time</label>
           <select onChange={formik.handleChange} value={formik.values.time}  id='time' name='time' >
             {(availableTimes || []).map((time) => (
               <option key={time} value={time}>{time}</option>
             ))}
           </select>
-          <label htmlFor='guests'>Number of guests</label>
-          <input onChange={formik.handleChange} value={formik.values.guests} onBlur={formik.handleBlur}  id='guests' name='guests' type='text' min='1' max='10' />
+          <label htmlFor='guests' id='guests'>Number of guests</label>
+          <input onChange={formik.handleChange} value={formik.values.guests} onBlur={formik.handleBlur} aria-labelledby="guests" id='guests' name='guests' type='text' min='1' max='10' />
           {formik.errors.guests && formik.touched.guests ? (
           <div className="error">{formik.errors.guests}</div>
           ) : null}
@@ -90,7 +92,7 @@ console.log('formik ', formik.values)
               <option id={id} key={id} value={value}>{value}</option>
             ))}
           </select>
-          <button className='button button-secondary' type='submit'>Make Your reservation</button>
+          <button className='button button-secondary' data-testid="reservation-button" type='submit'>Make Your reservation</button>
         </div>
       </form>
     </div>
