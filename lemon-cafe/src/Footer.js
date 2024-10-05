@@ -9,10 +9,10 @@ function Footer() {
       <div className='footer-container'>
       <div className='footer-item'>
         <img alt='logo lemon' src='./images/footer-logo.png' className='footer-logo'></img>
-        
+
       </div>
       <div className='footer-item'>
-        <label>Nav igation</label>
+        <label htmlFor='navigation'>Navigation</label>
         <nav role="navigation">
           <ul>
               <li>
@@ -37,7 +37,7 @@ function Footer() {
         </nav>
       </div>
       <div className='footer-item'>
-        <label>Contact</label>
+        <label htmlFor='contact'>Contact</label>
         <ul>
           <li>
             410 N Michigan Ave Suite 120, Chicago,
@@ -51,7 +51,7 @@ function Footer() {
         </ul>
       </div>
       <div className='footer-item'>
-        <label>Social Media Links</label>
+        <label htmlFor='social-media-links'>Social Media Links</label>
         <ul>
           <li>
             <a href='https://www.facebook.com/' target='_blank' className="nav-link">
@@ -60,7 +60,7 @@ function Footer() {
                 </path>
               </svg>
             </a>
-            
+
           </li>
           <li>
             <a href='https://x.com' target='_blank' className="nav-link">
@@ -69,7 +69,7 @@ function Footer() {
               </path>
             </svg>
             </a>
-            
+
           </li>
           <li>
             <a  href='https://www.instagram.com/' target='_blank' >
@@ -82,7 +82,7 @@ function Footer() {
         </ul>
       </div>
     </div>
-      <label>&copy; 2024 Little Lemon. All rights reserved.</label>
+      <label htmlFor='footer'>&copy; 2024 Little Lemon. All rights reserved.</label>
     </footer>
   );
 }

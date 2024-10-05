@@ -36,7 +36,7 @@ function OrderPage() {
             <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.
             </p>
           <div className='order-content'>
-            <label>$12.99</label>
+            <label htmlFor='greek-salad'>$12.99</label>
             <button aria-label='Add-to-Basket' className='button button-secondary'
 
             >
@@ -59,7 +59,7 @@ function OrderPage() {
               cured pork, or cheese are examples of variations. In Italy, a brustolina grill is frequently used to create bruschetta.
             </p>
             <div className='order-content'>
-              <label>$7.99</label>
+              <label htmlFor='brushetta'>$7.99</label>
               <button aria-label='Add-to-Basket' className='button button-secondary'
 
             >
@@ -82,7 +82,7 @@ function OrderPage() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.
           </p>
           <div className='order-content'>
-            <label>$20.00</label>
+            <label htmlFor='grill-fish'>$20.00</label>
             <button aria-label='Add-to-Basket'  className='button button-secondary'
 
             >
@@ -104,7 +104,7 @@ function OrderPage() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet nec in ornare.
           </p>
           <div className='order-content'>
-            <label>$18.99</label>
+            <label htmlFor='pasta'>$18.99</label>
             <button aria-label='Add-to-Basket'  className='button button-secondary'
 
             >
@@ -126,7 +126,7 @@ function OrderPage() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla odio enim vitae.
           </p>
           <div className='order-content'>
-            <label>$8.99</label>
+            <label htmlFor='lemon-dessert'>$8.99</label>
             <button aria-label='Add-to-Basket'  className='button button-secondary'
 
             >

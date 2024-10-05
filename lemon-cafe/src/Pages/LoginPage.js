@@ -11,15 +11,15 @@ function LoginPage() {
       </div>
       <div className='info-block'>
         <div>
-          <label>User Name</label>
+          <label htmlFor='user-name'>User Name</label>
           <input for='name' id='name' type='text' ></input>
         </div>
         <div>
-          <label>User Email</label>
+          <label htmlFor='user-email'>User Email</label>
           <input for='email' id='email' type='text' ></input>
         </div>
         <div>
-          <label>User Password</label>
+          <label htmlFor='user-password'>User Password</label>
           <input for='password' id='password' type='text' ></input>
         </div>
       </div>

@@ -14,7 +14,7 @@ function SpecialsSection() {
             <div className='card-container'>
               <div className='flex-content'>
                 <h4>Greek salad</h4>
-                <label>$12.99</label>
+                <label htmlFor='greek-salad'>$12.99</label>
               </div>
               <p>
                 The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.
@@ -30,7 +30,7 @@ function SpecialsSection() {
             <div className='card-container'>
               <div className='flex-content'>
                 <h4>Bruchetta</h4>
-                <label>$10.00</label>
+                <label htmlFor='bruchetta'>$10.00</label>
               </div>
               <p>
                 Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.
@@ -46,7 +46,7 @@ function SpecialsSection() {
             <div className='card-container'>
               <div className='flex-content'>
                 <h4>Lemon Dessert</h4>
-                <label>$5.00</label>
+                <label htmlFor='lemon-dessert'>$5.00</label>
               </div>
               <p>
                 This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.

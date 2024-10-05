@@ -12,7 +12,7 @@ function MenuPage() {
           <h1>Greek Salad</h1>
             <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.
             </p>
-          <label>$12.99</label>
+          <label htmlFor='greek-salad'>$12.99</label>
         </div>
         <div className="col">
           <img className='img-meal' alt='greek salad' src='../images/greek_salad.jpg'></img>
@@ -25,7 +25,7 @@ function MenuPage() {
               Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. Toppings of tomato, veggies, beans,
               cured pork, or cheese are examples of variations. In Italy, a brustolina grill is frequently used to create bruschetta.
             </p>
-          <label>$7.99</label>
+          <label htmlFor='brushetta'>$7.99</label>
         </div>
         <div className="col">
           <img className='img-meal' alt='bruchetta' src='../images/bruchetta.png'></img>
@@ -37,7 +37,7 @@ function MenuPage() {
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed cursus.
           </p>
-          <label>$20.00</label>
+          <label htmlFor='grill-fish'>$20.00</label>
         </div>
         <div className="col">
           <img className='img-meal' alt='bruchetta' src='../images/fish.png'></img>
@@ -49,7 +49,7 @@ function MenuPage() {
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet nec in ornare.
           </p>
-          <label>$18.99</label>
+          <label htmlFor='pasta'>$18.99</label>
         </div>
         <div className="col">
           <img className='img-meal' alt='bruchetta' src='../images/pasta.png'></img>
@@ -61,7 +61,7 @@ function MenuPage() {
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla odio enim vitae.
           </p>
-          <label>$8.99</label>
+          <label htmlFor='lemon-dessert'>$8.99</label>
         </div>
         <div className="col">
           <img className='img-meal' alt='bruchetta' src='../images/lemon_dessert.jpg'></img>

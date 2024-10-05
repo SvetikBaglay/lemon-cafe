@@ -33,7 +33,7 @@ function Confirm() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Номер картки:</label>
+          <label htmlFor='number-card'>Number Card:</label>
           <input
             type="text"
             value={cardNumber}
@@ -42,7 +42,7 @@ function Confirm() {
           />
         </div>
         <div>
-          <label>Термін дії (MM/YY):</label>
+          <label htmlFor='validity-period'>Validity period (MM/YY):</label>
           <input
             type="text"
             value={expiryDate}
@@ -51,7 +51,7 @@ function Confirm() {
           />
         </div>
         <div>
-          <label>CVV:</label>
+          <label htmlFor='cvv-cod'>CVV:</label>
           <input
             type="text"
             value={cvv}
