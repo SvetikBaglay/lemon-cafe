@@ -1,27 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import BookingForm from "../Pages/BookingForm";
 import { act } from 'react';
-import { Container } from "@chakra-ui/react";
-import { number } from 'yup';
-
-// describe('correct attributes input date', () => {
-//     test('correct attributes name date', () => {
-//         render(<BookingForm />);
-//         const guestsInput = screen.getByRole('textbox', { name: /date/i });
-//         expect(guestsInput).toHaveAttribute('type', 'date');
-//     })
-// })
-
-
-// describe('correct attributes input guests', () => {
-//     test('correct attributes type, min, max guests', () => {
-//         render(<BookingForm />);
-//         const guestsInput = screen.getByRole('textbox', { name: /guests/i });
-//         expect(guestsInput).toHaveAttribute('type', 'text');
-//         expect(guestsInput).toHaveAttribute('min', '1');
-//         expect(guestsInput).toHaveAttribute('max', '10');
-//     })
-// })
 
 
 describe('correct attributes input date', () => {
@@ -84,18 +63,7 @@ describe('correct value input guests', () => {
     })
 })
 
-////
 
-// const handler = jest.fn()
-
-// const {
-//   container: {firstChild: input},
-// } = render(<input type="text" onInput={handler} />)
-
-// fireEvent.input(input, {target: {value: 'a'}})
-
-// expect(handler).toHaveBeenCalledTimes(1)
-////
 
 describe('correct attributes button Submit', () => {
     test('correct attributes type submit button', () => {
@@ -115,7 +83,7 @@ describe('correct attributes button Reservation', () => {
     });
 })
 
-// expect(screen.getByRole('input', { ninputGuestsame: 'the-inputs-id' })).toHaveValue('test');
+
 
 //  Here are the accessible roles:
 
