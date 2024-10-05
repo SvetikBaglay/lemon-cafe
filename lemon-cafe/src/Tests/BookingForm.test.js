@@ -1,6 +1,8 @@
-import { getByRole, render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from '@testing-library/react';
 import BookingForm from "../Pages/BookingForm";
+import { act } from 'react';
 import { Container } from "@chakra-ui/react";
+import { number } from 'yup';
 
 // describe('correct attributes input date', () => {
 //     test('correct attributes name date', () => {
@@ -58,6 +60,42 @@ describe('correct attributes input guests', () => {
         expect(screen.getByLabelText('Number of guests')).toBeTruthy();
     })
 })
+
+
+describe('correct value input guests', () => {
+    test('correct valid value input guests ', () => {
+        render(<BookingForm />);
+        const guestsInput = screen.getByLabelText(/guests/i);
+        expect(guestsInput).toHaveValue(1)
+    })
+})
+
+describe('correct value input guests', () => {
+    test('correct valid value input guests ', async () => {
+        await act(async () => {
+            render(<BookingForm />);
+        })
+        const guestsInput = screen.getByLabelText(/guests/i);
+        await act(async () => {
+            fireEvent.input(guestsInput, { target: { value: 111 } });
+             });
+        // expect(guestsInput).toBeValid('a') // no valid)
+        expect(guestsInput).toBeInvalid('a')
+    })
+})
+
+////
+
+// const handler = jest.fn()
+
+// const {
+//   container: {firstChild: input},
+// } = render(<input type="text" onInput={handler} />)
+
+// fireEvent.input(input, {target: {value: 'a'}})
+
+// expect(handler).toHaveBeenCalledTimes(1)
+////
 
 describe('correct attributes button Submit', () => {
     test('correct attributes type submit button', () => {

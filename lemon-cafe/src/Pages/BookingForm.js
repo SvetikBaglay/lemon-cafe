@@ -60,7 +60,7 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
     }),
 
   });
-console.log('formik ', formik.values)
+// console.log('formik ', formik.values)
 
   return (
     <div className='booking-container'>
@@ -80,7 +80,7 @@ console.log('formik ', formik.values)
             ))}
           </select>
           <label htmlFor='guests' id='guests'>Number of guests</label>
-          <input onChange={formik.handleChange} value={formik.values.guests} onBlur={formik.handleBlur} aria-labelledby="guests" id='guests' name='guests' type='text' min='1' max='10' />
+          <input onChange={formik.handleChange} value={formik.values.guests} onBlur={formik.handleBlur} aria-labelledby="guests" id='guests' name='guests' type='number' min='1' max='10' />
           {formik.errors.guests && formik.touched.guests ? (
           <div className="error">{formik.errors.guests}</div>
           ) : null}
