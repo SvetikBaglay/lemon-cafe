@@ -20,7 +20,7 @@ function Confirm() {
   };
 
   return (
-    
+
     <div>
       <h1>Підтвердження платежу</h1>
       <h2>Ваше замовлення:</h2>
@@ -59,7 +59,7 @@ function Confirm() {
             required
           />
         </div>
-        <button type="submit" className="button button-primary">Оплатити</button>
+        <button type='submit' className='button button-primary' aria-label='Pay'>Оплатити</button>
       </form>
     </div>
   );

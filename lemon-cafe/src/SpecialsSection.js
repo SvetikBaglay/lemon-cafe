@@ -6,7 +6,7 @@ function SpecialsSection() {
       <div className='highlights-container'>
         <div className='online-menu'>
           <h2>This weeks specials!</h2>
-          <button className='button button-secondary'>Online Menu</button>
+          <button className='button button-secondary' aria-label='Online-Menu'>Online Menu</button>
         </div>
         <div className='cards'>
           <div className='card'>
@@ -17,7 +17,7 @@ function SpecialsSection() {
                 <label>$12.99</label>
               </div>
               <p>
-                The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. 
+                The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.
               </p>
               <div>
                 <span>Order a delivery</span>

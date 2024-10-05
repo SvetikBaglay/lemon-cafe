@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function OrderPage() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const [selectedItems, setSelectedItems] = useState([]);
   const [showDelivery, setShowDelivery] = useState(false);
@@ -18,7 +18,7 @@ function OrderPage() {
   const handleAddToBasket = (item) => {
     console.log('dish:', item)
     setSelectedItems((prevItems) => [...prevItems, item]);
-    setShowDelivery(true); 
+    setShowDelivery(true);
 
     navigate('/delivery');
   };
@@ -37,15 +37,15 @@ function OrderPage() {
             </p>
           <div className='order-content'>
             <label>$12.99</label>
-            <button className='button button-secondary'  
-            
+            <button aria-label='Add-to-Basket' className='button button-secondary'
+
             >
               Add to Basket</button>
-            {/* <button className='button button-secondary'  
+            {/* <button className='button button-secondary'
             onClick={() => handleAddToBasket({ name: 'Greek Salad', price: 12.99 })}
             >
               Add to Basket</button> */}
-          </div>  
+          </div>
         </div>
         <div className="col">
           <img className='img-meal' alt='greek salad' src='../images/greek_salad.jpg'></img>
@@ -60,8 +60,8 @@ function OrderPage() {
             </p>
             <div className='order-content'>
               <label>$7.99</label>
-              <button className='button button-secondary'  
-            
+              <button aria-label='Add-to-Basket' className='button button-secondary'
+
             >
               Add to Basket</button>
               {/* <button className='button button-secondary'
@@ -69,7 +69,7 @@ function OrderPage() {
               >
                 Add to Basket</button> */}
             </div>
-          
+
         </div>
         <div className="col">
           <img className='img-meal' alt='bruchetta' src='../images/bruchetta.png'></img>
@@ -83,8 +83,8 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$20.00</label>
-            <button className='button button-secondary'  
-            
+            <button aria-label='Add-to-Basket'  className='button button-secondary'
+
             >
               Add to Basket</button>
             {/* <button className='button button-secondary'
@@ -105,8 +105,8 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$18.99</label>
-            <button className='button button-secondary'  
-            
+            <button aria-label='Add-to-Basket'  className='button button-secondary'
+
             >
               Add to Basket</button>
             {/* <button className='button button-secondary'
@@ -127,8 +127,8 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label>$8.99</label>
-            <button className='button button-secondary'  
-            
+            <button aria-label='Add-to-Basket'  className='button button-secondary'
+
             >
               Add to Basket</button>
             {/* <button className='button button-secondary'
@@ -144,7 +144,7 @@ function OrderPage() {
       </>
       )}
     </div>
-  ); 
+  );
 }
 
 

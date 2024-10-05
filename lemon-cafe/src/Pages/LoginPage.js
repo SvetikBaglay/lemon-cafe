@@ -25,7 +25,7 @@ function LoginPage() {
       </div>
       <div className='login-block'>
         <a className='login-label'>I don't remember password</a>
-        <button className='button button-secondary'>Log In</button>
+        <button aria-label='Log-In' className='button button-secondary'>Log In</button>
       </div>
     </div>
   );

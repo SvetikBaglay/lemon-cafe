@@ -92,7 +92,7 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
               <option id={id} key={id} value={value}>{value}</option>
             ))}
           </select>
-          <button className='button button-secondary' data-testid="reservation-button" type='submit'>Make Your reservation</button>
+          <button className='button button-secondary' aria-label='Make-reservation' data-testid='reservation-button' type='submit'>Make Your reservation</button>
         </div>
       </form>
     </div>

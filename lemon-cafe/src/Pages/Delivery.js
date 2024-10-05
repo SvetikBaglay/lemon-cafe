@@ -10,20 +10,20 @@ import { useNavigate } from 'react-router-dom';
 
 function Delivery({ selectedItems }) {
   const navigate = useNavigate();
-  
- 
+
+
   const [quantities, setQuantities] = useState({});
 
   useEffect(() => {
     console.log('Selected Items:', selectedItems)
     if (selectedItems) {
       const initialQuantities = selectedItems.reduce((acc, item) => {
-        acc[item.name] = 1; 
+        acc[item.name] = 1;
         return acc;
       }, {});
       setQuantities(initialQuantities);
     }
-  }, [selectedItems]); 
+  }, [selectedItems]);
 
   const incrementQuantity = (itemName) => {
     setQuantities((prevQuantities) => ({
@@ -43,13 +43,13 @@ function Delivery({ selectedItems }) {
   };
 
   const handleProceedToCheckout = () => {
-    navigate('/confirm', { 
-      state: { 
-        selectedItems: selectedItems.map(item => ({ 
-          ...item, 
-          quantity: quantities[item.name] 
-        })) 
-      } 
+    navigate('/confirm', {
+      state: {
+        selectedItems: selectedItems.map(item => ({
+          ...item,
+          quantity: quantities[item.name]
+        }))
+      }
     });
   };
 
@@ -60,21 +60,21 @@ function Delivery({ selectedItems }) {
         {selectedItems && selectedItems.length > 0 ? (
           selectedItems.map((item, index) => (
             <li key={index}>
-              {item.name} - ${item.price.toFixed(2)} x 
-              <button onClick={() => decrementQuantity(item.name)}>-</button>
+              {item.name} - ${item.price.toFixed(2)} x
+              <button aria-label='Plus-To-Basket' onClick={() => decrementQuantity(item.name)}>-</button>
               {quantities[item.name]}
-              <button onClick={() => incrementQuantity(item.name)}>+</button>
+              <button aria-label='Minuse-To-Basket' onClick={() => incrementQuantity(item.name)}>+</button>
             </li>
           ))
         ) : (
           <li>No items in your order.</li>
         )}
       </ul>
-      <button className='button button-primary' onClick={handleProceedToCheckout}>
+      <button className='button button-primary' aria-label='Proceed' onClick={handleProceedToCheckout}>
         Proceed to Checkout
       </button>
     </div>
-  ); 
+  );
 }
 
 export default Delivery;
