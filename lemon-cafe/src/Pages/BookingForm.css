@@ -2,11 +2,6 @@
   color: #d41c46;
 }
 
-/* input .input-error
-select .input-error {
-  border: 1px solid red;
-} */
-
 .booking-container{
   display: flex;
   flex-direction: column;

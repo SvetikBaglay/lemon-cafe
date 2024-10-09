@@ -6,7 +6,7 @@ import './OrderPage.css'
 
 function LogInAccount({ userName }) {
 
-// console.log('submitLoginForm ', submitLoginForm)
+
   return (
     <div className='booking-container'>
      

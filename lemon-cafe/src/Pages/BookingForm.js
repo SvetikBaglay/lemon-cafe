@@ -11,9 +11,8 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
   const options = [{id: 1, value: 'Birthday'}, {id: 2, value: 'Anniversary'}]
   const [form, setForm] = useState({ date: '', time: '', quests: 1, occasion: 1 })
 
-  const regexNumber = /^[0-9]*$/
 
-  // const isFormValid = resDate && resTime && guests;
+
 
   function handleChangeResDate(e) {
     setForm({ ...form, date: e.target.value });
@@ -60,7 +59,7 @@ function BookingForm({ availableTimes, updateTimes, submitForm }) {
     }),
 
   });
-// console.log('formik ', formik.values)
+
 
   return (
     <div className='booking-container'>
