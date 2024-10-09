@@ -12,7 +12,8 @@ import LoginPage from './LoginPage';
 import Delivery from './Delivery';
 import Confirm from './Confirm';
 import ConfirmedBooking from './ConfirmedBooking';
-import React, { useReducer  } from "react";
+import LogInAccount from './LogInAccount';
+import React, { useReducer, useState  } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -28,6 +29,7 @@ export const updateTimes = (state, date) => {
 
 
 function Main() {
+  const [userName, setUserName] = useState('');
   const navigate = useNavigate();
 
   const submitForm = (formData) => {
@@ -35,6 +37,16 @@ function Main() {
     if (result) {
       console.log('YES valid Forma')
       navigate('/confirmed')
+    }
+  }
+
+  const submitLoginForm = (formData) => {
+    console.log('formData ', formData.name)
+    
+    if (formData) {
+      setUserName(formData.name);
+      console.log('YES valid Forma')
+      navigate('/account')
     }
   }
 
@@ -46,12 +58,11 @@ function Main() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/menu" element={<MenuPage />} />
-          <Route path="/reservations" element={<BookingForm availableTimes={availableTimes}
-            updateTimes={dispatchTimeUpdate}
-            submitForm={submitForm}/>} />
-          <Route path="/confirmed" element={<ConfirmedBooking />} />
+          <Route path="/reservations" element={<BookingForm availableTimes={availableTimes} updateTimes={dispatchTimeUpdate}  submitForm={submitForm}/>} />
+          <Route path="/confirmed" element={<ConfirmedBooking/>} />
           <Route path="/order" element={<OrderPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage submitLoginForm={submitLoginForm}  />} />
+          <Route path="/account" element={<LogInAccount userName={userName}/>} />
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/confirm" element={<Confirm />} />
         </Routes>
