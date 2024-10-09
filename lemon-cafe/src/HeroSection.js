@@ -7,7 +7,7 @@ function HeroSection() {
       <div className="flex-container hero-container">
         <div className="hero-description">
         <h1>Little Lemon</h1>
-        <h5>Chicago</h5>
+        <h4>Chicago</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <button className="button button-primary " aria-label="Reserve-a-Table">Reserve a Table</button>
       </div>

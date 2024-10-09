@@ -4,9 +4,12 @@ h1 {
   font-family: 'Roboto', sans-serif;
 }
 
-h5 {
+h4 {
   font-family: 'Markazi Text', serif;
   color: #000000 !important;
+  font-size: 32px !important;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 a {

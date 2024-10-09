@@ -9,7 +9,7 @@ function AboutPage() {
     <div className='about-container'>
       <div className='about-item'>
         <h1>Little Lemon</h1>
-        <h5>Chicago</h5>
+        <h6>Chicago</h6>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed non, nisi ut odit ex neque
            reprehenderit accusantium optio ratione eius temporibus veritatis maiores, architecto fugiat saepe 
            suscipit totam cupiditate ullam beatae accusamus soluta libero quas! Itaque vel aut laborum aliquid 
