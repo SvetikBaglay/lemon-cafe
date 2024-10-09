@@ -27,7 +27,7 @@ function OrderPage() {
     <div className="menu-container">
       {console.log('Selected Items in OrderPage:', selectedItems)}
       {showDelivery ? (
-        <Delivery selectedItems={selectedItems} />
+        <Delivery  />
       ) :(
       <>
         <div className="row">
@@ -37,14 +37,14 @@ function OrderPage() {
             </p>
           <div className='order-content'>
             <label htmlFor='greek-salad'>$12.99</label>
-            <button aria-label='Add-to-Basket' className='button button-secondary'
+            {/* <button aria-label='Add-to-Basket' className='button button-secondary'
 
             >
-              Add to Basket</button>
-            {/* <button className='button button-secondary'
+              Add to Basket</button> */}
+            <button className='button button-secondary'
             onClick={() => handleAddToBasket({ name: 'Greek Salad', price: 12.99 })}
             >
-              Add to Basket</button> */}
+              Add to Basket</button>
           </div>
         </div>
         <div className="col">
@@ -60,14 +60,14 @@ function OrderPage() {
             </p>
             <div className='order-content'>
               <label htmlFor='brushetta'>$7.99</label>
-              <button aria-label='Add-to-Basket' className='button button-secondary'
+              {/* <button aria-label='Add-to-Basket' className='button button-secondary'
 
             >
-              Add to Basket</button>
-              {/* <button className='button button-secondary'
+              Add to Basket</button> */}
+              <button className='button button-secondary'
               onClick={() => handleAddToBasket({ name: 'Bruschetta', price: 7.99 })}
               >
-                Add to Basket</button> */}
+                Add to Basket</button>
             </div>
 
         </div>
@@ -83,14 +83,14 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label htmlFor='grill-fish'>$20.00</label>
-            <button aria-label='Add-to-Basket'  className='button button-secondary'
+            {/* <button aria-label='Add-to-Basket'  className='button button-secondary'
 
             >
-              Add to Basket</button>
-            {/* <button className='button button-secondary'
+              Add to Basket</button> */}
+            <button className='button button-secondary'
             onClick={() => handleAddToBasket({ name: 'Grilled Fish', price: 20.00 })}
             >
-              Add to Basket</button> */}
+              Add to Basket</button>
           </div>
         </div>
         <div className="col">
@@ -105,14 +105,14 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label htmlFor='pasta'>$18.99</label>
-            <button aria-label='Add-to-Basket'  className='button button-secondary'
+            {/* <button aria-label='Add-to-Basket'  className='button button-secondary'
 
             >
-              Add to Basket</button>
-            {/* <button className='button button-secondary'
+              Add to Basket</button> */}
+            <button className='button button-secondary'
             onClick={() => handleAddToBasket({ name: 'Pasta', price: 18.99 })}
             >
-              Add to Basket</button> */}
+              Add to Basket</button>
           </div>
         </div>
         <div className="col">
@@ -127,14 +127,14 @@ function OrderPage() {
           </p>
           <div className='order-content'>
             <label htmlFor='lemon-dessert'>$8.99</label>
-            <button aria-label='Add-to-Basket'  className='button button-secondary'
+            {/* <button aria-label='Add-to-Basket'  className='button button-secondary'
 
             >
-              Add to Basket</button>
-            {/* <button className='button button-secondary'
+              Add to Basket</button> */}
+            <button className='button button-secondary'
             onClick={() => handleAddToBasket({ name: 'Lemon Dessert', price: 8.99 })}
             >
-              Add to Basket</button> */}
+              Add to Basket</button>
           </div>
         </div>
         <div className="col">

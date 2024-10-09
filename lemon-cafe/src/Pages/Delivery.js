@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Delivery({ selectedItems }) {
   const navigate = useNavigate();
-
+console.log('selectedItems ', selectedItems)
 
   const [quantities, setQuantities] = useState({});
 
@@ -55,7 +55,8 @@ function Delivery({ selectedItems }) {
 
   return (
     <div>
-      <h1>Your Order</h1>
+      <h1>This Page is a Work in Progress</h1>
+      {/* <h1>Your Order</h1>
       <ul>
         {selectedItems && selectedItems.length > 0 ? (
           selectedItems.map((item, index) => (
@@ -72,7 +73,7 @@ function Delivery({ selectedItems }) {
       </ul>
       <button className='button button-primary' aria-label='Proceed' onClick={handleProceedToCheckout}>
         Proceed to Checkout
-      </button>
+      </button> */}
     </div>
   );
 }
